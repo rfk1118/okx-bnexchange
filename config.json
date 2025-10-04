@@ -1,0 +1,19 @@
+{
+  "maxSellAmount": 2000,
+  "maxTradeFee": 0.5,
+  "balanceSafetyFactor": 2,
+  "chain": [
+     {
+      "id": 56,
+      "inputAddress": "0xD955c9bA56Fb1AB30e34766e252A97ccCE3D31A6",
+      "outputAddress": "0x55d398326f99059fF775485246999027B3197955",
+      "path": "XPIN:USDT",
+      "tokenAmount": 100000,
+      "tokenMinAmount": 1,
+      "slippage": "0.001",
+      "tokenSymbol": "XPIN",
+      "category": "linear",
+      "side": "Buy"
+    }
+  ]
+}
