@@ -32,19 +32,19 @@ This project is no longer accepting updates, bug fixes, or new feature requests.
 
 ## 📋 项目简介 / Project Overview
 
-这是一个基于 TypeScript 开发的加密货币套利交易机器人，用于在 OKX DEX 和 Bybit 交易所之间进行价差套利交易。
+这是一个基于 TypeScript 开发的加密货币套利交易机器人，用于在 OKX DEX 和币安 (Binance) 交易所之间进行价差套利交易。
 
-An automated cryptocurrency arbitrage trading bot built with TypeScript, designed to execute arbitrage opportunities between OKX DEX and Bybit exchange.
+An automated cryptocurrency arbitrage trading bot built with TypeScript, designed to execute arbitrage opportunities between OKX DEX and Binance exchange.
 
 ### 核心功能 / Core Features
 
-- **跨平台套利**: 在 OKX DEX (链上) 和 Bybit (中心化交易所) 之间监控价差
+- **跨平台套利**: 在 OKX DEX (链上) 和币安 (中心化交易所) 之间监控价差
 - **自动交易执行**: 当发现有利可图的套利机会时自动执行交易
 - **风险控制**: 内置价格影响检测、手续费检测和余额安全因子
 - **多链支持**: 支持 EVM 兼容链 (如 BSC)
 - **实时监控**: 持续监控市场价格并记录交易日志
 
-- **Cross-platform Arbitrage**: Monitors price spreads between OKX DEX (on-chain) and Bybit (centralized exchange)
+- **Cross-platform Arbitrage**: Monitors price spreads between OKX DEX (on-chain) and Binance (centralized exchange)
 - **Automated Trade Execution**: Automatically executes trades when profitable arbitrage opportunities are detected
 - **Risk Management**: Built-in price impact detection, fee monitoring, and balance safety factors
 - **Multi-chain Support**: Supports EVM-compatible chains (e.g., BSC)
@@ -57,7 +57,7 @@ An automated cryptocurrency arbitrage trading bot built with TypeScript, designe
 - **语言**: TypeScript
 - **主要依赖**:
   - `@okx-dex/okx-dex-sdk`: OKX DEX 交易接口
-  - `bybit-api`: Bybit 交易所 API
+  - `binance`: 币安交易所 API
   - `ccxt`: 统一加密货币交易所 API
   - `ethers`: 以太坊/EVM 链交互
   - `mysql2`: 数据库存储 (可选)
@@ -92,8 +92,8 @@ cp .env.example .env
 ```
 
 需要配置的环境变量:
-- `BYBIT_API_KEY`: Bybit API Key
-- `BYBIT_API_SECRET`: Bybit API Secret
+- `BYBIT_API_KEY`: 币安 API Key
+- `BYBIT_API_SECRET`: 币安 API Secret
 - `OKX_API_KEY`: OKX API Key
 - `OKX_SECRET_KEY`: OKX Secret Key
 - `OKX_API_PASSPHRASE`: OKX API Passphrase
@@ -154,7 +154,7 @@ okx-bnexchange/
 │   ├── index.ts             # 应用入口
 │   ├── config.ts            # 配置管理
 │   ├── client/
-│   │   ├── Bn.ts           # Bybit 客户端
+│   │   ├── Bn.ts           # 币安客户端
 │   │   └── Okxclient.ts    # OKX 客户端
 │   ├── chain/
 │   │   └── ChainService.ts # 区块链交互服务
@@ -172,7 +172,7 @@ okx-bnexchange/
 
 ## ⚙️ 核心工作流程 / Workflow
 
-1. **价格监控**: 持续获取 OKX DEX 和 Bybit 的实时价格
+1. **价格监控**: 持续获取 OKX DEX 和币安的实时价格
 2. **价差计算**: 计算两个平台之间的价格差异
 3. **风险评估**:
    - 检查价格影响是否在可接受范围内
@@ -180,7 +180,7 @@ okx-bnexchange/
    - 确认账户余额充足
 4. **交易执行**:
    - 在链上执行 DEX 交易
-   - 在 Bybit 执行对冲交易
+   - 在币安执行对冲交易
 5. **结果记录**: 记录交易哈希和订单信息
 
 ---
